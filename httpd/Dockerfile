@@ -9,3 +9,7 @@ RUN apt-get update -y
 RUN apt-get install apache2 -y
 
 COPY envvars /etc/apache2/envvars
+
+VOLUME /var/www /tmp/log/apache2 /etc/apache2
+
+EXPOSE 80 443
