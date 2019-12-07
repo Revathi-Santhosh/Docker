@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+    wordpress:
+      depends_on:
+        - db
+      image:
+        wordpress
+      ports:
+        - "8088:80"
+      networks:
+        - wordpress_network
+      volumes:
+        - wordpress_html:/var/www/html
+      environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: my_wordpress_db_password
+
+    db:
+      image: mysql
+      volumes:
+        - db_data:/var/lib/mysql
+      networks:
+        - wordpress_network
+      command: [
+        '--default_authentication_plugin=mysql_native_password',
+        '--character-set-server=utf8mb4',
+        '--collation-server=utf8mb4_unicode_ci'
+        ]
+      environment:
+        MYSQL_ROOT_PASSWORD: my_db_root_password
+        MYSQL_DATABASE: wordpress
+        MYSQL_USER: wordpress
+        MYSQL_PASSWORD: my_wordpress_db_password
+volumes:
+    wordpress_html:
+    db_data:
+
+networks:
+  wordpress_network:

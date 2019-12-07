@@ -1,0 +1,17 @@
+version: "3.7"
+services:
+  pythonui:
+   ports:
+      - 7000:7000
+   image:
+     revathilalam/python_webapp:1.0.0
+   volumes:
+      - python_logs:/tmp/logs
+   networks:
+      - python_ntwrk
+
+ volumes:
+   python_logs:
+
+ networks:
+   python_ntwrk:
