@@ -12,4 +12,4 @@ COPY envvars /etc/apache2/envvars
 
 VOLUME /var/www /tmp/log/apache2 /etc/apache2
 
-EXPOSE 80 443 
+EXPOSE 80 443
