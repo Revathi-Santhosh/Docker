@@ -1,0 +1,47 @@
+version: '3.7'
+services:
+  python_webapp:
+   image: revathilalam/python_ui:1.1
+   deploy:
+     placement:
+       constraints:
+        - node.role == manager
+     replicas: 2
+     restart_policy:
+        condition: on-failure
+   configs:
+    - source: python_conf
+      target: /application/templates/index.html
+   secrets:
+    - python_pswd
+   volumes:
+    - web_data:/tmp
+   networks:
+    - python_net
+   ports:
+    - "7000:7000"
+  nginx:
+   image: nginx
+   deploy:
+     replicas: 2
+   ports:
+    - "8002:80"
+   volumes:
+    - nginx_logs:/var/log/nginx
+   networks:
+    - nginx_ntwrk
+volumes:
+  web_data:
+  nginx_logs:
+
+networks:
+  nginx_ntwrk:
+  python_net:
+
+configs:
+  python_conf:
+    external:
+      name: python_config_v1
+secrets:
+  python_pswd:
+    external: true
