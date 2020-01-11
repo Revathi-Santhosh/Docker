@@ -1,0 +1,156 @@
+1920  docker --version
+ 1921  docker run hello-world
+ 1922  docker image ls
+ 1923  docker pull nginx
+ 1924  docker image ls
+ 1925  docker pull nginx:1.17
+ 1926  docker image ls
+ 1927  docker container run nginx
+ 1928  docker ps
+ 1929  docker run -ti nginx
+ 1930  docker run -ti -d nginx
+ 1931  docker ps
+ 1932  docker rm -f 0dc86eb538c3
+ 1933  ls -rtl
+ 1934  clear
+ 1935  docker run -ti nginx
+ 1936  docker run -ti -p 80n:80 ginx
+ 1937  docker run -ti -p 80:80 ginx
+ 1938  docker run -ti -p 80:80 nginx
+ 1939  netstat -nautpl | grep listen
+ 1940  netstat -nautpl
+ 1941  service apache2 stop
+ 1942  netstat -nautpl
+ 1943  docker run -ti -p 80:80 nginx
+ 1944  docker ps
+ 1945  docker run -ti -d -p 80:80 nginx
+ 1946  docker ps
+ 1947  docker  image ls
+ 1948  docker run -ti -d -p 81:80 nginx:1.17
+ 1949  docker ps
+ 1950  docker run -ti -d -p 82:80 nginx:1.17.5
+ 1951  docker ps
+ 1952  docker run -ti -d -p 83:80 nginx:1.17.5
+ 1953  docker ps
+ 1954  docker run -ti -d -name test_nginx -p 84:80 nginx:1.17.5
+ 1955  docker run -ti -d --name test_nginx -p 84:80 nginx:1.17.5
+ 1956  docker ps
+ 1957  docker rm a631038ea47a
+ 1958  docker container stop a631038ea47a
+ 1959  docker ps
+ 1960  docker rm a631038ea47a
+ 1961  docker ps
+ 1962  curl 127.0.0.1:82
+ 1963  docker ps
+ 1964  docker exec -ti -d tomcat
+ 1965  docker run -ti -d tomcat
+ 1966  docker run -ti -d tomcat:8
+ 1967  clear
+ 1968  docker ps
+ 1969  docker exec -ti 27ba96e803ec /bin/sh
+ 1970  docker stop 27ba96e803ec
+ 1971  docker start
+ 1972  docker start  27ba96e803ec
+ 1973  ls -rt
+ 1974  docker exec -ti 27ba96e803ec /bin/sh
+ 1975  docker rm -f $(docker ps -aq)
+ 1976  clear
+ 1977  docker ps
+ 1978  docker ps -a
+ 1979  docker ps -aq
+ 1980  docker ps -a
+ 1981  docker ps -q
+ 1982  docker run -ti tomcat:8
+ 1983  docker run -ti -d  tomcat:8
+ 1984  docker ps
+ 1985  docker run -ti -d --name jackie tomcat:8
+ 1986  docker ps
+ 1987  docker network ls
+ 1988  docker run -ti -d --name random_jackie -P tomcat:8
+ 1989  docker ps
+ 1990  docker run -ti -d --name configured_jackie -p 8080:8080 tomcat:8
+ 1991  clear
+ 1992  docker ps
+ 1993  docker stop 117bd56de740
+ 1994  docker ps
+ 1995  docker ps -a
+ 1996  docker start 117bd56de74
+ 1997  docker ps
+ 1998  docker ps -q
+ 1999  docker ps -aq
+ 2000  docker ps
+ 2001  docker rm 8b30cb2d9d83
+ 2002  docker stop 8b30cb2d9d83
+ 2003  docker ps
+ 2004  docker ps -a
+ 2005  docker rm 8b30cb2d9d83
+ 2006  docker ps -a
+ 2007  docker rm -f efa224d5ccd4
+ 2008  docker ps
+ 2009  docker container inspect 117bd56de740
+ 2010  clear
+ 2011  docker network
+ 2012  docker network ls
+ 2013  docker ps
+ 2014  docker exec -ti 117bd56de740 /bin/bash
+ 2015  docker network test_n
+ 2016  docker network create  test_n
+ 2017  docker run -ti -d --name test1 --network test_n tomcat:8
+ 2018  docker run -ti -d --name test2 --network test_n tomcat:8
+ 2019  dockerr ps
+ 2020  docker ps
+ 2021  clear
+ 2022  docker ps
+ 2023  docker exec -ti e03a389fa934 /bin/bash
+ 2024  docker ps
+ 2025  docker exec -ti test2 /bin/bash
+ 2026  clear
+ 2027  docker ps
+ 2028  docker ps -aq
+ 2029  docker rm -f $(docker ps -aq)
+ 2030  docker ps
+ 2031  clear
+ 2032  docker run -ti -d --name tomcat_8 -p 8090:8080 tomcat:8
+ 2033  docker ps
+ 2034  clear
+ 2035  docker ps
+ 2036  docker attach ae2cd40b8b38
+ 2037  docker ps
+ 2038  docker rm -f $(docker ps -aq)
+ 2039  docker run -ti -d --name tomcat_8 -p 8090:8080 tomcat:8
+ 2040  docker run -ti -d --name tomcat_8 -p 8090:8080 tomcat:8 /bin/bash
+ 2041  docker run -ti -d --name tomcat_81 -p 8900:8080 tomcat:8 /bin/bash
+ 2042  docker attach ead841dc3bc563c52351ee872ceec2ab526aa8c9c7cb1e58cf8e31262085d07c
+ 2043  docker ps
+ 2044  clear
+ 2045  docker run -ti -d --name tomcat_81 -p 8900:8080 tomcat:8 echo "hello"
+ 2046  docker run -ti -d --name tomcat_82 -p 8900:8080 tomcat:8 echo "hello"
+ 2047  docker attach a875f6421143afa4c18dd026eefb026027347cb0f20f0365fb4fbf7a747481a8
+ 2048  docker ps
+ 2049  docker run -ti -d --name tomcat_82 -p 8901:8080 tomcat:8 echo "hello"
+ 2050  docker run -ti -d --name tomcat_182 -p 8901:8080 tomcat:8 echo "hello"
+ 2051  docker ps
+ 2052  docker ps -aq
+ 2053  clear
+ 2054  docker rm -f $(docker ps -aq)
+ 2055  docker run -ti -d --name test_attadh -p 8090:8080 tomcat:8
+ 2056  docker ps
+ 2057  docker attach abdda2f5dae2 /bin/bash
+ 2058  clear
+ 2059  docker rm -f $(docker ps -aq)
+ 2060  docker run -ti -d --name test_attadh -p 8090:8080 tomcat:8 /bin/bash
+ 2061  docker run -ti -d --name test_attd -p 809:18080 tomcat:8 /bin/sh
+ 2062  docker ps
+ 2063  docker attach 44235d57c954
+ 2064  docker ps
+ 2065  docker ps -a
+ 2066  docker ps
+ 2067  docker attach d069ee080dc1
+ 2068  docker ps
+ 2069  docker ps -aq
+ 2070  docker ps -a
+ 2071  docker run -ti -d --name exec_test -p 8080:8080  tomcat:8
+ 2072  docker ps
+ 2073  docker exec -ti 9aa4c2b7239a /bin/bash
+ 2074  docker ps
+ 2075  docker exec -ti 9aa4c2b7239a /bin/sh
